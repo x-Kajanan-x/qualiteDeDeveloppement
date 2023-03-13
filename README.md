@@ -59,6 +59,14 @@ A l'IUT, le traffic réseau passe par un proxy. Il faut donc décommenter le fic
 
 https://github.com/charroux/qualiteDeDeveloppement/blob/main/gradle.properties
 
+## Création des packages 
+
+Créer 3 sous-packages au package com.example.demo:
+- data   
+- service 
+- web
+
+Data va contenir les classes dont les instances vont être sauvegardées dans la base de données, service les traitements des données et web le Web service.  
 ## Codage des classes de données, accès à la base de données
 
 ### Codage d'une classe Voiture
