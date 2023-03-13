@@ -33,7 +33,7 @@ git clone https://github.com/charroux/qualiteDeDeveloppement
 Durant les TP vous allez travailler en binôme. Créez un dépôt de code public mais vide dans Github (sans Readme, ni gitignore),
 puis recopier ce projet dans votre dépôt git en prodédant comme suit :
 ```
-Effacer tout les fichiers git du répertoire du projet (faites un ls -all pour voir tous les fichiers git)
+rm -rf .git
 git init
 git add *
 git commit -m "first commit"
@@ -66,7 +66,7 @@ https://github.com/charroux/qualiteDeDeveloppement/blob/main/gradle.properties
 Créer une classe appelée Voiture dans le package data du projet. Cette classe doit contenir :
  - une marque
  - un prix
- - un identifiant appelé id de type int (qui va servir de clef primaire à la base de doonées)
+ - un identifiant appelé id de type int (qui va servir de clef primaire à la table Voiture dans la base de doonées)
 
 ### Tests unitaires de la classe Voiture
 Le dossier src/test/java contient déjà l'ébauche de la classe de test de la voiture. 
@@ -106,70 +106,3 @@ https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html
 
 # TP 2 (deuxième séance) : codage de la classe de service qui intègre la base de données
 A suivre...
-
-# Le code 
-
-## La classe Voiture
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/data/Voiture.java
-
-## La classe qui calcule les statistiques et les enregistrent dans la base de données
-
-Cette classe permet de calculer le prix moyen d'un ensemble de voitures au fur et à mesure qu'on ajoute des voitures.
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/service/Statistique.java
-
-## La clase qui expose le calcule des statistiques sur le Web
-
-Cette classe permet tout simplement d'ajouter une voiture via un HTTP POST et de récupérer le prix moyen des voitures via un HTTP GET grâce à l'appel du service.
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/web/StatistiqueController.java
-
-# Test de l'application via des requettes HTTP
-
-Lancer le programme principal : https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/DemoApplication.java
-
-La base de données est HSQLDB. Elle s'exécute "En mémoire" pour ne pas avoir à démarrer un serveur de base de données tant qu'on est en mode développement.
-En conséquence, les données sont perdues dès que l'application s'arrête.
-
-Ajouter une voiture en ligne de commande avec cURL (sous Linux) : 
-
-```
-curl --header "Content-Type: application/json" --request POST --data '{"marque":"Ferrari","prix":1000}' http://localhost:8080/voiture
-```
-
-Obtenir les statistiques : 
-
-```
-curl --request GET http://localhost:8080/statistique
-```
-
-# Programmes de test
-
-## Tests unitaires de la classe Voiture
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/test/java/com/example/demo/data/VoitureTest.java
-
-## Tests unitaires de l'accès à la base de données
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/test/java/com/example/demo/data/BaseDeDonneesTests.java
-
-## Tests de la classe de service qui intègre la base de données
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/test/java/com/example/demo/service/ServiceTests.java
-
-## Tests de la classe de service Web qui intègre le service
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/test/java/com/example/demo/web/WebTests.java
-
-# Lancement des tests
-
-## Via Eclipse
-
-## Via Intellij
-
-## En ligne de commande
-
-
-
-Consulter le rapport de test : build/reports/tests/test/index.html
