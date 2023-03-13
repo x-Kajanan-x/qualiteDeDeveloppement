@@ -11,14 +11,8 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class BaseDeDonneesTests {
 
-    @MockBean
-    private VoitureRepository voitureRepository;
-
     @Test
     void uneVoiture(){
-        Voiture voiture = new Voiture("Ferrari", 5000);
-        when(voitureRepository.save(voiture)).thenReturn(voiture);
-        when(voitureRepository.findAll()).thenReturn(Collections.singletonList(voiture));
     }
 
 }
