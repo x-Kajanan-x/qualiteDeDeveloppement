@@ -67,12 +67,6 @@ Cette commande permet aussi de lancer les tests et génère aussi un rapport htm
 ### Avec Eclipse 
 La version Eclipse de l'IUT n'ayant pas le plugin gradle, il n'est pas recommandé ee l'utiliser.
 
-## Configuration de l'application
-
-A l'IUT, le traffic réseau passe par un proxy. Il faut donc décommenter le fichier de configuration : 
-
-https://github.com/charroux/qualiteDeDeveloppement/blob/main/gradle.properties
-
 ## Codage des classes de données, accès à la base de données
 
 ### Codage d'une classe Voiture
