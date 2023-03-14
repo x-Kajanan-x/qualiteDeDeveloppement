@@ -41,6 +41,8 @@ git branch -M main
 git remote add origin https://github.com/[adresse .git de votre projet]
 git push -u origin main
 ```
+Si le push échoue à cause d'un problème d'authentification, il faut créer un "token" sur le site de Github et ensuite faire le push.
+
 ## Edition du projet
 
 ### Avec Intellij
