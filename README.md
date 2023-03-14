@@ -25,10 +25,21 @@ que le développement du service web).
 Le but de l'application est de faire des statistiques sur des voitures.
 
 ## Récupération du projet
+Si vous n'avez pas utilisé Github depuis un moment, il se peut que le Token qui vous permet d'accéder à Github soit périmé.
+Dans ce cas, il faudra en génbérer un autre. La procédure est indiqué ici : https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+Il faudra alors utiliser ce token à la place de votre mot de passe quand vous ferrez des commandes git.
+
+Démarrer le machine de l'école sous Linux.
+
+Attention ! sur les machines de l'IUT il faut se placer sur /tmp car cela ne fonctionne pas sur les dossiers personnels.
 ```
 git clone https://github.com/charroux/qualiteDeDeveloppement
 ```
-## Clonage du projet dans un dépôt git qui vous appartient
+Se placer ensuite dans le dossier du projet:
+```
+cd qualiteDeDeveloppement
+```
+## Copie du projet dans un dépôt git qui vous appartient
 
 Durant les TP vous allez travailler en binôme. Créez un dépôt de code public mais vide dans Github (sans Readme, ni gitignore),
 puis recopier ce projet dans votre dépôt git en prodédant comme suit :
@@ -41,19 +52,20 @@ git branch -M main
 git remote add origin https://github.com/[adresse .git de votre projet]
 git push -u origin main
 ```
-Si le push échoue à cause d'un problème d'authentification, il faut créer un "token" sur le site de Github et ensuite faire le push.
 
 ## Edition du projet
 
 ### Avec Intellij
-
-Lancer Intellij et ouvrir tout simplement le projet.
+Lancer Intellij et ouvrir tout simplement le projet. 
+Cependant, sur les machines de l'IUT, la compilation du projet ne fonctionnera pas. 
+Ce n'est pas très génant pour compiler votre projet vous pourrez utiliser la commande: 
+```
+./gradlew build
+```
+Cette commande permet aussi de lancer les tests et génère aussi un rapport html: build/reports/tests/test/index.html
 
 ### Avec Eclipse 
-
-Attention, c'est la version JEE developpeur qu'il faut utiliser.
-
-Importer le projet en choisissant "import gradle project".
+La version Eclipse de l'IUT n'ayant pas le plugin gradle, il n'est pas recommandé ee l'utiliser.
 
 ## Configuration de l'application
 
@@ -61,19 +73,11 @@ A l'IUT, le traffic réseau passe par un proxy. Il faut donc décommenter le fic
 
 https://github.com/charroux/qualiteDeDeveloppement/blob/main/gradle.properties
 
-## Création des packages 
-
-Créer 3 sous-packages au package com.example.demo:
-- data   
-- service 
-- web
-
-Data va contenir les classes dont les instances vont être sauvegardées dans la base de données, service les traitements des données et web le Web service.  
 ## Codage des classes de données, accès à la base de données
 
 ### Codage d'une classe Voiture
 
-Créer une classe appelée Voiture dans le package data du projet. Cette classe doit contenir :
+Ajoutez dans le ficher existant Voiture.java (package com.example.demo.data) une classe appelée Voiture. Cette classe doit contenir :
  - une marque
  - un prix
  - un identifiant appelé id de type int (qui va servir de clef primaire à la table Voiture dans la base de doonées)
@@ -85,12 +89,11 @@ tester la classe Voiture. Vérifiez que les méthodes de la classe Voiture retou
 
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/Assert.html
 
-Vous pouvez exécuter les tests via un clic droit sur le programme de test ou en ligne de commande en faisant :
-
 Sous Linux :
 ```
 ./gradlew build
 ```
+Vérifier le rapport de test: build/reports/tests/test/index.html
 
 ### Accès à la base de données
 La base de données est HSQLDB. Elle s'exécute "En mémoire" pour ne pas avoir à démarrer un serveur de base de données tant qu'on est en mode développement.
