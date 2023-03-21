@@ -71,11 +71,14 @@ La version Eclipse de l'IUT n'ayant pas le plugin gradle, il n'est pas recommand
 
 ### Codage d'une classe Voiture
 
-Ajoutez dans le ficher existant Voiture.java (package com.example.demo.data) une classe appelée Voiture. Cette classe doit contenir :
+Une ébauche de la classe Voiture est donnée : https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/data/Voiture.java
+
+Elle contient déjà un identifiant qui va servir de clef primaire à une table dans la base de données (explications à venir).
+
+Ajoutez à cette classe les attributs :
  - une marque
  - un prix
- - un identifiant appelé id de type int (qui va servir de clef primaire à la table Voiture dans la base de doonées)
-
+ 
 ### Tests unitaires de la classe Voiture
 Le dossier src/test/java contient déjà l'ébauche de la classe de test de la voiture. 
 Cette classe de test est appelée VoitureTest. Ajoutez à cette classe autant de méthodes que vous jugez utile pour 
