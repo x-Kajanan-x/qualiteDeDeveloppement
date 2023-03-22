@@ -94,12 +94,14 @@ Vérifier le rapport de test: build/reports/tests/test/index.html
 
 # TP 2
 
-## Accès à la base de données
+## La base de données
 La base de données est HSQLDB. Elle s'exécute "En mémoire" pour ne pas avoir à démarrer un serveur de base de données tant qu'on est en mode développement.
 En conséquence, les données sont perdues dès que l'application s'arrête.
 
-Etude du cours sur le sauvegarde de données dans une base de données via Java : https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
+## Cours sur l'accès à la une base de données en Java
+https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
 
+## Accès à la base de données
 Pour permettre d'accéder par programmation à la base de données uns interface a déjà été programmée : https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/data/VoitureRepository.java
 
 Un exemple d'utilisation de cette interface est données dans le cours sur l'accès à la base de données. 
@@ -107,7 +109,7 @@ Un exemple d'utilisation de cette interface est données dans le cours sur l'acc
 Pour connaître l'ensemble des méthodes d'accès à la base de données, 
 étudier l'interface CRUD repository : https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
 
-## Tests de l'accès à la base de données
+## Test de l'accès à la base de données
 Les tests à réaliser ici vont utiliser le framework de test Mockito : https://github.com/charroux/mockito
 
 Le dossier src/test/java (package data) contient l'ébauche du programme de test de la base de données :
@@ -121,6 +123,7 @@ Ajoutez à cette classe autant de méthodes que vous jugez utile pour tester l'a
 
 # TP 3 : codage de l'interface Web
 
-Etude du cours sur Rest : https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
+## Cours sur les Web services Rest
+https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
 
 ## Test du Web service
