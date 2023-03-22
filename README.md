@@ -96,16 +96,9 @@ Vérifier le rapport de test: build/reports/tests/test/index.html
 La base de données est HSQLDB. Elle s'exécute "En mémoire" pour ne pas avoir à démarrer un serveur de base de données tant qu'on est en mode développement.
 En conséquence, les données sont perdues dès que l'application s'arrête.
 
-Pour permettre d'accéder par programmation à la base de données vous devez simplement créer uns interface dans le même package que la classe Voiture : 
+Etude du cours sur le sauvegarde de données dans une base de données via Java : https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
 
-``` Java
-package com.example.demo.data;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface VoitureRepository extends CrudRepository<Voiture, Integer> {
-}
-```
+Pour permettre d'accéder par programmation à la base de données uns interface a déjà été programmée : https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/data/VoitureRepository.java
 
 ### Tests de l'accès à la base de données
 Le dossier src/test/java (package data) contient aussi l'ébauche du programme de test de la base de données (BaseDeDonneesTests.java).
@@ -114,5 +107,12 @@ tester l'accès à la base de données. Testez que la base de données contient 
 
 https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html
 
-# TP 2 (deuxième séance) : codage de la classe de service qui intègre la base de données
-A suivre...
+# TP 2 : codage de la classe de service qui intègre la base de données
+
+## Tests de la classe de service
+
+# TP 3 : codage de l'interface Web
+
+Etude du cours sur Rest : https://drive.google.com/drive/folders/1RVLc4yg5IKTq3OSht6wm1Cdjq9jOLEqy?usp=sharing
+
+## Test du Web service
