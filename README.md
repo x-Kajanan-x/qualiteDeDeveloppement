@@ -4,13 +4,13 @@ Le but de ce cours est de faire des tests d'intégration au fur et à mesure que
 tout en vérifiant que les tests précédents continuent de passer sans relever d'erreur. 
 On appelle cela des tests de non regression.
 
-# TD 1 (première séance)
+# TD 1
 
 Etude du framework de test inclus dans les projets Spring boot : https://github.com/charroux/springbootest
 
 Etude du framework de test Mockito: https://github.com/charroux/mockito
 
-# TP 1 (première séance)
+# TP 1
 
 ## Présentation de l'application
 
@@ -92,7 +92,9 @@ Sous Linux :
 ```
 Vérifier le rapport de test: build/reports/tests/test/index.html
 
-### Accès à la base de données
+# TP 2
+
+## Accès à la base de données
 La base de données est HSQLDB. Elle s'exécute "En mémoire" pour ne pas avoir à démarrer un serveur de base de données tant qu'on est en mode développement.
 En conséquence, les données sont perdues dès que l'application s'arrête.
 
@@ -100,12 +102,18 @@ Etude du cours sur le sauvegarde de données dans une base de données via Java 
 
 Pour permettre d'accéder par programmation à la base de données uns interface a déjà été programmée : https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/main/java/com/example/demo/data/VoitureRepository.java
 
-### Tests de l'accès à la base de données
-Le dossier src/test/java (package data) contient aussi l'ébauche du programme de test de la base de données (BaseDeDonneesTests.java).
-Ajoutez à cette classe autant de méthodes que vous jugez utile pour
-tester l'accès à la base de données. Testez que la base de données contient bien les bons éléments en utilsant le framework Mockito dont voici l'aide :
+Un exemple d'utilisation de cette interface est données dans le cours sur l'accès à la base de données. 
 
-https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html
+Pour connaître l'ensemble des méthodes d'accès à la base de données, 
+étudier l'interface CRUD repository : https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
+
+## Tests de l'accès à la base de données
+Les tests à réaliser ici vont utiliser le framework de test Mockito : https://github.com/charroux/mockito
+
+Le dossier src/test/java (package data) contient l'ébauche du programme de test de la base de données :
+https://github.com/charroux/qualiteDeDeveloppement/blob/main/src/test/java/com/example/demo/data/BaseDeDonneesTests.java
+
+Ajoutez à cette classe autant de méthodes que vous jugez utile pour tester l'accès à la base de données. 
 
 # TP 2 : codage de la classe de service qui intègre la base de données
 
