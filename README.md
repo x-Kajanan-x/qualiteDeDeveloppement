@@ -25,6 +25,12 @@ que le développement du service web).
 Le but de l'application est de faire des statistiques sur des voitures.
 
 ## Récupération du projet
+
+L'application dont vous lisez le Readme actuellement ne vous appartient pas (vous n'êtes pas les proprétaires du dépôt git).
+Cependant, vous pouvez télécharger ce projet sur vos machines et ensuite l'uploader vers un de vos dépôts git.
+
+Voici une vidéo de démonstration qui est suivie de la procéédure détaillée commande par commande : https://e.pcloud.link/publink/show?code=XZ3qthZaMGfUQCtTUR1zXO0O5jqnQVf5lQX
+
 Si vous n'avez pas utilisé Github depuis un moment, il se peut que le Token qui vous permet d'accéder à Github soit périmé.
 Dans ce cas, il faudra en génbérer un autre. La procédure est indiqué ici : https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 Il faudra alors utiliser ce token à la place de votre mot de passe quand vous ferrez des commandes git.
@@ -58,11 +64,16 @@ git push -u origin main
 ### Avec Intellij
 Lancer Intellij et ouvrir tout simplement le projet. 
 Cependant, sur les machines de l'IUT, la compilation du projet ne fonctionnera pas. 
-Ce n'est pas très génant pour compiler votre projet vous pourrez utiliser la commande: 
+Ce n'est pas très génant pour compiler votre projet vous pourrez ke faire via une commande.
+
+### La phase de build incluant l'exécution des tests
+Le build du projet (se compilation) ainsi que le lancement des programmes de tests peuvent se faire en ligne de commend via  la commande: 
 ```
 ./gradlew build
 ```
-Cette commande permet aussi de lancer les tests et génère aussi un rapport html: build/reports/tests/test/index.html
+Une vidéo de démonstration : https://e.pcloud.link/publink/show?code=XZIwqhZkSSA8vXtyWmbn0aEKkgsrJ5QBxlX
+
+Le consultation du rapport de test ce fait ici : build/reports/tests/test/index.html
 
 ### Avec Eclipse 
 La version Eclipse de l'IUT n'ayant pas le plugin gradle, il n'est pas recommandé ee l'utiliser.
